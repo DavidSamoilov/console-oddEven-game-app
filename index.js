@@ -6,7 +6,6 @@ const playerNamesArr = [];
 const playersPoints = {};
 
 const setPlayerNames = (playerAmount) => {
-
   for (let index = 1; index <= playerAmount; index++) {
     let curName = prompt(`player ${index} name`);
     console.log(curName);
@@ -28,13 +27,7 @@ const userInputHowManyPlayers = () => {
     return players
     
 }
-let currentPlayersPlaying = playerNamesArr;
 
-console.log(
-  `Game starting , ${playerNamesArr[0]}(even) against ${playerNamesArr[1]}(odd) `
-  );
-
-  playersPoints
 
 const addPoint = (playerName) => {
     if(playersPoints[playerName]){
@@ -85,7 +78,7 @@ const FullMatch = (playerNamesArr,playersPoints,minRandom,maxRandom) => {
         console.log(`Status ${player1}:${playersPoints[player1]},${player2} : ${playersPoints[player2]} `);
 
         if(checkIfPlayerWon(roundWinner,BestOf,playersPoints)) {
-            winnerWasFound = true.
+            winnerWasFound = true
         }
         RoundNumber += 1
         if(RoundNumber>1000) return
