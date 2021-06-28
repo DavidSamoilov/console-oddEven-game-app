@@ -25,17 +25,23 @@ console.log(
 const playersPoints = {};
 
 const addPoint = (playerName) => {
-  return;
+    if(playersPoints[playerName]){
+        playersPoints[playerName] += 1
+    }else{
+        playersPoints[playerName] = 1
+    }
+
+  ;
 };
 
-const checkIfPlayerWon = (playerName,pointsNeededToWin) => {
-    if(playersPoints[playerName] >= pointsNeededToWin) {
+const checkIfPlayerWon = (playerName,pointsNeededToWin,playersPointsObj) => {
+    if(playersPointsObj[playerName] >= pointsNeededToWin) {
         console.log(`${playerName} is the winner`);
         return
     }
 }
 
-const Round = (currentPlayersPlaying) => {
+const Round = (currentPlayersPlaying,NumberOfRoundsToWin) => {
   const curRandomNum = randomNumber(-5, 13);
   curRandomNum % 2 === 0
     ? (addPoint(currentPlayersPlaying[0]),
@@ -45,4 +51,12 @@ const Round = (currentPlayersPlaying) => {
 
 };
 
-const FullMatch = ()
+const FullMatch = (NumberOfRoundsToWin,playerNamesArr) => {
+    while(true){
+        Round(playerNamesArr,NumberOfRoundsToWin){
+
+        }
+    }
+
+
+}
