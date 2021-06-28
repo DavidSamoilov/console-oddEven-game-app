@@ -8,7 +8,7 @@ const playersPoints = {};
 const setPlayerNames = (playerAmount) => {
   for (let index = 1; index <= playerAmount; index++) {
     let curName = prompt(`player ${index} name`);
-    console.log(curName);
+    console.log(`player ${index}. ${curName}`);
     if (!curName || curName in playerNamesArr) {
       index -= 1;
       console.log("please fill field");
@@ -85,5 +85,10 @@ const FullMatch = (playerNamesArr,playersPoints,minRandom,maxRandom) => {
     }
 
 }
+
+
+
+
+
 
 FullMatch(playerNamesArr,playersPoints,-5,13)
