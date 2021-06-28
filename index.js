@@ -1,9 +1,6 @@
-import randomNumber from "./JavaScript/createRandomNumber";
-
-
+import randomNumber from "./JavaScript/createRandomNumber.js";
 
 const playerNamesArr = [];
-
 
 const setPlayerNames = (playerAmount) => {
   for (let index = 1; index <= playerAmount; index++) {
@@ -18,10 +15,34 @@ const setPlayerNames = (playerAmount) => {
   }
 };
 
-
 setPlayerNames(2);
 let currentPlayersPlaying = playerNamesArr;
 
 console.log(
-  `Game starting , ${playerNamesArr[0]} against ${playerNamesArr[1]} `
+  `Game starting , ${playerNamesArr[0]}(even) against ${playerNamesArr[1]}(odd) `
 );
+
+const playersPoints = {};
+
+const addPoint = (playerName) => {
+  return;
+};
+
+const checkIfPlayerWon = (playerName,pointsNeededToWin) => {
+    if(playersPoints[playerName] >= pointsNeededToWin) {
+        console.log(`${playerName} is the winner`);
+        return
+    }
+}
+
+const Round = (currentPlayersPlaying) => {
+  const curRandomNum = randomNumber(-5, 13);
+  curRandomNum % 2 === 0
+    ? (addPoint(currentPlayersPlaying[0]),
+    checkIfPlayerWon(currentPlayersPlaying[0],2))
+    : (addPoint(currentPlayersPlaying[1]),
+    checkIfPlayerWon(currentPlayersPlaying[1],2))
+
+};
+
+const FullMatch = ()
