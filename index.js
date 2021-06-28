@@ -6,12 +6,11 @@ const playerNamesArr = [];
 const playersPoints = {};
 
 const setPlayerNames = (playerAmount) => {
- playerNamesArr = []
- playersPoints = {}
+
   for (let index = 1; index <= playerAmount; index++) {
     let curName = prompt(`player ${index} name`);
     console.log(curName);
-    if (!curName) {
+    if (!curName || curName in playerNamesArr) {
       index -= 1;
       console.log("please fill field");
       continue;
@@ -86,7 +85,7 @@ const FullMatch = (playerNamesArr,playersPoints,minRandom,maxRandom) => {
         console.log(`Status ${player1}:${playersPoints[player1]},${player2} : ${playersPoints[player2]} `);
 
         if(checkIfPlayerWon(roundWinner,BestOf,playersPoints)) {
-            winnerWasFound = true
+            winnerWasFound = true.
         }
         RoundNumber += 1
         if(RoundNumber>1000) return
