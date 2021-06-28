@@ -1,4 +1,10 @@
+import randomNumber from "./JavaScript/createRandomNumber";
+
+
+
 const playerNamesArr = [];
+
+
 const setPlayerNames = (playerAmount) => {
   for (let index = 1; index <= playerAmount; index++) {
     let curName = prompt(`player ${index} name`);
